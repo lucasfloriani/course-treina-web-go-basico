@@ -70,9 +70,18 @@ func main() {
 		fmt.Println(idade)
 	*/
 
-	var nome = "TreinaWeb" // Automáticamente adiciona o tipo
-	fmt.Println(nome)
-	// var nomeCompleto string = "TreinaWeb Cursos"
-	nomeCompleto := "TreinaWeb Cursos" // Atalho
-	fmt.Println(nomeCompleto)
+	/*
+		var nome = "TreinaWeb" // Automáticamente adiciona o tipo
+		fmt.Println(nome)
+		// var nomeCompleto string = "TreinaWeb Cursos"
+		nomeCompleto := "TreinaWeb Cursos" // Atalho
+		fmt.Println(nomeCompleto)
+	*/
+
+	// const constante string = "TreinaWeb" // Não pode trocar o valor
+	const (
+		primeiroNome = "TreinaWeb"
+		segundoNome  = "Cursos"
+	)
+	fmt.Println(primeiroNome, segundoNome)
 }
