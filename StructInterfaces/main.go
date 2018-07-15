@@ -5,6 +5,14 @@ import (
 	"fmt"
 )
 
+type Acelerador interface {
+	acelerar() error
+}
+
+type Freador interface {
+	frear() error
+}
+
 type Carro struct {
 	modelo     string
 	marca      string
@@ -44,9 +52,11 @@ func main() {
 		var err error = nil
 		switch opcao {
 		case 1:
-			err = carro.acelerar()
+			// err = carro.acelerar()
+			err = fazerAcelerar(&carro)
 		case 2:
-			err = carro.frear()
+			// err = carro.frear()
+			err = fazerFrear(&carro)
 		}
 		if err != nil {
 			fmt.Printf(" ** Não foi possível executar a ação: %s ** \n", err)
@@ -55,4 +65,12 @@ func main() {
 		}
 	}
 	fmt.Println("Fim da execução")
+}
+
+func fazerAcelerar(veiculo Acelerador) error {
+	return veiculo.acelerar()
+}
+
+func fazerFrear(veiculo Freador) error {
+	return veiculo.frear()
 }
